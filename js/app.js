@@ -65,11 +65,11 @@ let currencies = [
 ];
 function getCurrencySymbolFromCode() {
   const filterCurrencies = currencies.filter((currency) => {
-    if (code == "USD") {
+    if (code === "USD") {
       return "$";
-    } else if (code == "EUR") {
+    } else if (code === "EUR") {
       return "€";
-    } else if (code == "GEL") {
+    } else if (code === "GEL") {
       return "₾";
     } else {
       return "Can't find that type of currency";
@@ -77,3 +77,39 @@ function getCurrencySymbolFromCode() {
   });
   // ესეც მგონია რომ სწორად დავწერე მაგრამ კონსოლში ვერ გამოვატანინე :დ
 }
+
+// 6. შექმენით ობიექტების 5 ელემენტიანი მასივი, სადაც
+// თითოეულ ობიექტს გააჩნია name და age ველები.შემდეგ შექმენით ფუნქცია,
+// რომელიც პარამეტრად მიიღებს ამ მასივს და დააბრუნებს ყველაზე ახალგაზრდა
+// ობიექტს(რომლის age ველიც არის უმცირესი).
+let persons = [
+  {
+    name: "Saba",
+    age: 20,
+  },
+  {
+    name: "Natia",
+    age: 21,
+  },
+  {
+    name: "Lasha",
+    age: 41,
+  },
+  {
+    name: "Giorgi",
+    age: 16,
+  },
+  {
+    name: "Mariami",
+    age: 27,
+  },
+];
+
+function youngest() {
+  const filterAge = persons.filter((el) => {
+    return el.age < 20;
+  });
+}
+
+let filteredAge = youngest();
+console.log(filteredAge);
