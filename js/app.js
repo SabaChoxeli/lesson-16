@@ -23,6 +23,7 @@ function rectangleAr(x, y) {
 // გამოიყენეთ #2 პუნქტში აღწერილი ფუნქცია.
 function squareAr(x) {
   return x * 4;
+  // return x ** 2;
 }
 // let getSquareAr = squareAr(10);
 // console.log(getSquareAr);
@@ -64,12 +65,12 @@ let currencies = [
   },
 ];
 function getCurrencySymbolFromCode() {
-  const filterCurrencies = currencies.filter((currency) => {
-    if (code === "USD") {
+  let filterCurrencies = currencies.filter((currency) => {
+    if (currency.code === "USD") {
       return "$";
-    } else if (code === "EUR") {
+    } else if (currency.code === "EUR") {
       return "€";
-    } else if (code === "GEL") {
+    } else if (currency.code === "GEL") {
       return "₾";
     } else {
       return "Can't find that type of currency";
@@ -82,7 +83,7 @@ function getCurrencySymbolFromCode() {
 // თითოეულ ობიექტს გააჩნია name და age ველები.შემდეგ შექმენით ფუნქცია,
 // რომელიც პარამეტრად მიიღებს ამ მასივს და დააბრუნებს ყველაზე ახალგაზრდა
 // ობიექტს(რომლის age ველიც არის უმცირესი).
-let persons = [
+const persons = [
   {
     name: "Saba",
     age: 20,
@@ -105,11 +106,16 @@ let persons = [
   },
 ];
 
-function youngest() {
-  const filterAge = persons.filter((el) => {
-    return el.age < 20;
-  });
-}
+// let youngest = persons.filter(function (e) {
+//   return e.age < 20;
+// });
 
-let filteredAge = youngest();
-console.log(filteredAge);
+// console.log(youngest);
+// let youngest = persons.sort(function (a, b) {
+//   return a - b;
+// });
+
+let sort = persons.age.sort(function (a, b) {
+  return a - b;
+});
+console.log(persons[0]);
